@@ -20,16 +20,17 @@ public class Main {
         String file2 = dialog.getFile();
         System.out.println(file2 + " chosen.");
         File f = new File(file2);
-        String absolute = f.getCanonicalPath();
+        String absolute = dialog.getDirectory();
 
         int shift;
+
         Scanner load = new Scanner(System.in);
         System.out.println("Running a Decoder. \n Set the shift: "); // User can set the shift
         shift = load.nextInt();
 
-        File file = new File(absolute);
+        File file = new File(absolute + file2);
         System.out.println("Absolute  path: "
-                + absolute);
+                + absolute + file2);
         try (Scanner sc = new Scanner(file)) {
             while (sc.hasNextLine()) {
                 System.out.println(decode(sc.nextLine(), shift));
