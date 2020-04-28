@@ -20,7 +20,7 @@ public class Main {
         String file2 = dialog.getFile();
         System.out.println(file2 + " chosen.");
         File f = new File(file2);
-        String absolute = f.getAbsolutePath();
+        String absolute = f.getCanonicalPath();
 
         int shift;
         Scanner load = new Scanner(System.in);
